@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Information List</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <div class="container">
+    <title>Information List</title>
+      <h2>Information List</h2>
+      <br>
+      <% if(employees.length>0) { %>
+      <table class="list-table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Address</th>
+            <th>Phone</th>
+            <th>Items</th>
+            <th>Price</th>
+          </tr>
+        </thead>
+        <tbody>
+
+          <% for(var i=0; i<employees.length;i++) { %>
+            <tr>
+              <td><a href="/information/show/<%= employees[i]._id%>"><%= employees[i].name%></a></td>
+              <td><a><%= employees[i].address%></a></td>
+              <td><a><%= employees[i].phone%></a></td>
+              <td><a><%= employees[i].items%></a></td>
+              <td><a><%= employees[i].price%> vnđ</a></td>
+            </tr>
+          <% } %>
+        </tbody>
+      </table>
+      <% } else { %>
+        <div>No information found.</div>
+      <% } %><br><br>
+      <h3><a href="/information/create">Create Information</a></h3> 
+    </div>
+  </body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Edit Information</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <div class="container">
+      <h2>Edit Information</h2>
+      
+      <form action="/information/update/<%= employee._id%>" method="post">
+        <table>
+          <tbody>
+            <tr>
+              <td>Name</td>
+              <td><input type="text" name="name" value="<%= employee.name %>" /></td>
+            </tr>
+            <tr>
+              <td>Address</td>
+              <td><textarea name="address"><%= employee.address %></textarea></td>
+            </tr>
+            <tr>
+              <td>Phone</td>
+              <td><input type="number" name="phone" value="<%= employee.phone %>" /></td>
+            </tr>
+            <tr>
+              <td>Items</td>
+              <td><input type="text" name="items" value="<%= employee.items %>" /></td>
+            </tr>
+            <tr>
+              <td>Price</td>
+              <td><input type="number" name="price" value="<%= employee.price %>" /></td>
+            </tr>
+            <tr>
+              <td colspan="2"><button type="submit">Update</button></td>  
+              <td><h3><a href="/information">Information List</a></h3></td>
+            </tr>
+          </tbody>  
+        </table>
+      </form>
+    </div>
+  </body>
+</html>

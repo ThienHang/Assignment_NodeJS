@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Information Detail</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <div class="container">
+       <h2>Information Detail</h2>
+      <table>
+        <tbody>
+          <tr>
+            <td>Name</td>
+            <td>:</td>
+            <td><%= employee.name %></td>
+          </tr>
+          <tr>
+            <td>Address</td>
+            <td>:</td>
+            <td><%= employee.address %></td>
+          </tr>
+          <tr>
+            <td>Phone</td>
+            <td>:</td>
+            <td><%= employee.phone %></td>
+          </tr>
+          <tr>
+            <td>Items</td>
+            <td>:</td>
+            <td><%= employee.items %></td>
+          </tr>
+          <tr>
+            <td>Price</td>
+            <td>:</td>
+            <td><%= employee.price %> vnđ</td>
+          </tr>
+        </tbody>
+      </table>
+      <h3><a href="/information/edit/<%= employee._id%>">EDIT</a>
+      <a href="/information">Information List</a> </h3>
+      <form action="/information/delete/<%= employee._id%>" method="post">
+        <button type="submit">DELETE</button>
+      </form>
+    </div>
+  </body>
+</html>
